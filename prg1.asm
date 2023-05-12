@@ -11,15 +11,15 @@ RunGameMode_VictorySub:
 	lda GameSubmode
 	jsr DoJumpTable
 VictorySubJumpTable:
-	.dw RunGameSubmode_VictoryInit	;$00  Init
-	.dw RunGameSubmode_VictoryUpdateHUD		;$01  Update HUD
-	.dw RunGameSubmode_VictoryBossClear		;$02  Boss clear
-	.dw RunGameSubmode_VictoryExplosion		;$03  Explosion
-	.dw RunGameSubmode_VictoryJingle		;$04  Jingle
-	.dw RunGameSubmode_VictoryScoreUp		;$05  Score up
-	.dw RunGameSubmode_VictoryScoreUpEnd		;$06  Score up end
-	.dw RunGameSubmode_VictoryLifeUp		;$07  Life up
-	.dw RunGameSubmode_VictoryLifeUpEnd		;$08  Life up end
+	.dw RunGameSubmode_VictoryInit		;$00  Init
+	.dw RunGameSubmode_VictoryUpdateHUD	;$01  Update HUD
+	.dw RunGameSubmode_VictoryBossClear	;$02  Boss clear
+	.dw RunGameSubmode_VictoryExplosion	;$03  Explosion
+	.dw RunGameSubmode_VictoryJingle	;$04  Jingle
+	.dw RunGameSubmode_VictoryScoreUp	;$05  Score up
+	.dw RunGameSubmode_VictoryScoreUpEnd	;$06  Score up end
+	.dw RunGameSubmode_VictoryLifeUp	;$07  Life up
+	.dw RunGameSubmode_VictoryLifeUpEnd	;$08  Life up end
 ;$00: Init
 RunGameSubmode_VictoryInit:
 	;Next submode ($01: Update HUD)

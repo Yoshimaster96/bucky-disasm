@@ -123,9 +123,9 @@ BGGrayPipeVRAMAddrHi	.equ $93
 BGDarkRoomMode		.equ $93
 BGBallRollMode		.equ $94
 BGRotRoomSaveScrollHi	.equ $95
+BGPalAnimTimer		.equ $96
 BGRotRoomSaveScrollX	.equ $96
 BGCeilingSpikesMode	.equ $96
-BGPalAnimTimer		.equ $96
 BGAnimMode		.equ $97
 BGCeilingSpikesIndex	.equ $97
 BGFrozenIceLayerTimer	.equ $97

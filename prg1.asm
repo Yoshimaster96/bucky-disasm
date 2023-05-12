@@ -410,6 +410,7 @@ VictoryDialogTable:
 ;ENEMY ROUTINES;
 ;;;;;;;;;;;;;;;;
 ;$00: Player fire
+;$03: Blinky fire
 Enemy00:
 	;If enemy Y position < $C0, clear enemy flags
 	lda Enemy_Y,x

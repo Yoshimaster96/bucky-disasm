@@ -14,6 +14,7 @@
 	.include "regs.asm"
 	.include "vars.asm"
 
+	.fillvalue $FF
 	.include "prg0.asm"
 	.include "prg1.asm"
 	.include "prg2.asm"

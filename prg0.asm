@@ -9060,6 +9060,7 @@ HandlePlayerMovementX_EP_NoDeath:
 	rts
 
 ;UNUSED SPACE
-	.db $FF,$FF,$FF,$FF,$FF,$FF
+	;$06 bytes of free space available
+	;.db $FF,$FF,$FF,$FF,$FF,$FF
 
 	.org $C000

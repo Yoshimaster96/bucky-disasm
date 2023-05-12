@@ -10595,6 +10595,7 @@ Enemy64_Exit:
 	rts
 
 ;UNUSED SPACE
-	.db $FF,$FF,$FF,$FF
+	;$04 bytes of free space available
+	;.db $FF,$FF,$FF,$FF
 
 	.org $C000

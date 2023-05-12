@@ -6962,7 +6962,8 @@ DemoInputCurData:
 	.db $00
 
 ;UNUSED SPACE
-	.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
-	.db $FF,$FF,$FF
+	;$13 bytes of free space available
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF
 
 	.org $C000

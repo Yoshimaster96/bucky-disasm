@@ -10200,6 +10200,7 @@ DMCBassDrumDataEnd:
 ;;;;;;;;
 ;HEADER;
 ;;;;;;;;
+	.org $FFE0
 	;    0123456789ABCDEF
 	.db "    BUCKY O'HARE"	;Title
 	.db $DA,$F3	;PRG checksum

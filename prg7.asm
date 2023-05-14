@@ -10142,8 +10142,8 @@ InitMMC3:
 	;Load PRG bank $38 (clear hard mode subroutine bank)
 	ldy #$38
 	jsr LoadPRGBank
-	;Clear hard mode flag
-	jsr ClearHardMode
+	;Do copy protection check
+	jsr CopyProtectCheck
 	;Restore PRG bank
 	jsr RestorePRGBank
 	rts

@@ -325,8 +325,11 @@ Nametable08Data:
 	.db $05,$00,$05,$05
 	.db $FF
 
-;CLEAR HARD MODE ROUTINE
-ClearHardMode:
+;;;;;;;;;;;;;;;;;;;;
+;COPY PROTECT CHECK;
+;;;;;;;;;;;;;;;;;;;;
+CopyProtectCheck:
+	;Clear hard mode flag
 	lda #$00
 	sta HardModeFlag
 	rts

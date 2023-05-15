@@ -325,9 +325,9 @@ Nametable08Data:
 	.db $05,$00,$05,$05
 	.db $FF
 
-;;;;;;;;;;;;;;;;;;;;
-;COPY PROTECT CHECK;
-;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;COPY PROTECT CHECK ROUTINES;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 CopyProtectCheck:
 	;Clear hard mode flag
 	lda #$00

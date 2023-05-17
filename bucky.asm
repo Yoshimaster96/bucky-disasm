@@ -6,7 +6,7 @@
 ;;;;;;;;;;;;;
 ;INES HEADER;
 ;;;;;;;;;;;;;
-.incbin		"header.bin"
+	.incbin "header.bin"
 
 ;;;;;;;;;
 ;PRG ROM;
@@ -27,4 +27,4 @@
 ;;;;;;;;;
 ;CHR ROM;
 ;;;;;;;;;
-.incbin		"chr.bin"
+	.incbin "chr.bin"

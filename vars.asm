@@ -261,8 +261,8 @@ DemoInputDownIndex	.equ $071E
 DemoInputCurIndex	.equ $071F
 
 ;Sound vars
-SoundPointersLo		.equ $0720
-SoundPointersHi		.equ $0726
+SoundPointerLo		.equ $0720
+SoundPointerHi		.equ $0726
 SoundBaseLength		.equ $072C
 SoundReturnPtrLo	.equ $0732
 SoundReturnPtrHi	.equ $0738

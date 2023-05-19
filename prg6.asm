@@ -170,12 +170,12 @@ LoadSoundInit_Comm:
 	;Get sound pointers
 	iny
 	lda (TempSoundInitPointer),y
-	sta SoundPointersLo,x
+	sta SoundPointerLo,x
 	sta SoundRepeat1PtrLo,x
 	sta SoundRepeat2PtrLo,x
 	iny
 	lda (TempSoundInitPointer),y
-	sta SoundPointersHi,x
+	sta SoundPointerHi,x
 	sta SoundRepeat1PtrHi,x
 	sta SoundRepeat2PtrHi,x
 	;Check for square output channel
@@ -950,9 +950,9 @@ SoundCommandFB:
 	adc #(SoundRepeat2PtrLo-SoundRepeat1PtrLo)
 	tay
 SoundCommandFB_SetLoop:
-	lda SoundPointersLo,x
+	lda SoundPointerLo,x
 	sta SoundRepeat1PtrLo,y
-	lda SoundPointersHi,x
+	lda SoundPointerHi,x
 	sta SoundRepeat1PtrHi,y
 	;Setup sound data pointers
 	ldy TempSoundDataIndex
@@ -1014,9 +1014,9 @@ SoundCommandFE_DoLoop:
 	sta SoundRepeat1Counter,y
 	;Setup sound data pointers
 	lda SoundRepeat1PtrLo,y
-	sta SoundPointersLo,x
+	sta SoundPointerLo,x
 	lda SoundRepeat1PtrHi,y
-	sta SoundPointersHi,x
+	sta SoundPointerHi,x
 	ldy TempSoundDataIndex
 	jsr GetSoundPointer
 	jmp UpdateSoundChannel_GetByte
@@ -1074,9 +1074,9 @@ SoundCommandFF:
 	sta SoundControlFlags,x
 	;Setup sound data pointers
 	lda SoundReturnPtrLo,x
-	sta SoundPointersLo,x
+	sta SoundPointerLo,x
 	lda SoundReturnPtrHi,x
-	sta SoundPointersHi,x
+	sta SoundPointerHi,x
 	jsr GetSoundPointer
 	jmp UpdateSoundChannel_GetByte
 SoundCommandFF_NoSub:
@@ -2108,9 +2108,9 @@ OutputSoundDummy:
 GetSoundPointer:
 	;Get sound data pointer
 	ldy #$00
-	lda SoundPointersLo,x
+	lda SoundPointerLo,x
 	sta TempSoundDataPointer
-	lda SoundPointersHi,x
+	lda SoundPointerHi,x
 	sta TempSoundDataPointer+1
 	rts
 
@@ -2120,11 +2120,11 @@ IncSoundPointer:
 	tya
 	clc
 	adc TempSoundDataPointer
-	sta SoundPointersLo,x
+	sta SoundPointerLo,x
 	bcc IncSoundPointer_NoC
 	lda TempSoundDataPointer+1
 	adc #$00
-	sta SoundPointersHi,x
+	sta SoundPointerHi,x
 IncSoundPointer_NoC:
 	rts
 
@@ -2132,10 +2132,10 @@ SetSoundPointer:
 	;Set current sound data pointer
 	iny
 	lda (TempSoundDataPointer),y
-	sta SoundPointersLo,x
+	sta SoundPointerLo,x
 	iny
 	lda (TempSoundDataPointer),y
-	sta SoundPointersHi,x
+	sta SoundPointerHi,x
 	rts
 
 SetSoundReturnPointer:

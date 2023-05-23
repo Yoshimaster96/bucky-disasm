@@ -10203,14 +10203,23 @@ DMCBassDrumDataEnd:
 	.org $FFE0
 	;    0123456789ABCDEF
 	.db "    BUCKY O'HARE"	;Title
+.if VER_JPN != 0
+	.db $DE,$39	;PRG checksum
+.else ;VER_USA
 	.db $DA,$F3	;PRG checksum
+.endif
 	.db $0E,$55	;CHR checksum
 	.db $33		;128KiB PRG, 128KiB CHR
 	.db $04		;Horizontal mirroring, MMC
 	.db $01		;Title encoding (ASCII)
 	.db $0B		;Title length
+.if VER_JPN != 0
+	.db $CA		;Maker code (Konami)
+	.db $90		;Header checksum
+.else ;VER_USA
 	.db $A4		;Maker code (Konami)
 	.db $B6		;Header checksum
+.endif
 ;IVT data
 	.dw NMI
 	.dw Reset

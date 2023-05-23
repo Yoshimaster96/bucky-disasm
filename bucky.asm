@@ -3,6 +3,9 @@
 ;      By Yoshimaster96      ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+VER_JPN = 0
+VER_USA = 0	;Default
+
 ;;;;;;;;;;;;;
 ;INES HEADER;
 ;;;;;;;;;;;;;

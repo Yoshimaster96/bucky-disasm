@@ -15,6 +15,30 @@ Nametable00Data:
 	.db $78,$00,$78,$00,$78,$00,$78,$00,$78,$00,$78,$00,$78,$00,$78,$00
 	.db $40,$00
 	.db $FF
+
+.if VER_JPN != 0
+Nametable02Data:
+	.dw $2000
+	.db $7E,$00,$0D,$00,$8B,$2C,$2D,$2E,$2F,$30,$31,$32,$33,$34,$44,$35
+	.db $14,$00,$8D,$36,$37,$38,$39,$3A,$3B,$3C,$3D,$3E,$3F,$40,$41,$00
+	.db $13,$00,$82,$42,$43,$39,$00,$96,$81,$82,$82,$83,$84,$86,$87,$88
+	.db $89,$8A,$8B,$8C,$8D,$8E,$8F,$AE,$AF,$85,$93,$82,$82,$47,$0A,$00
+	.db $81,$90,$03,$91,$8E,$92,$95,$96,$97,$98,$99,$9A,$9B,$9C,$9D,$9E
+	.db $67,$68,$94,$03,$91,$81,$46,$0B,$00,$94,$A0,$A1,$A1,$A2,$A4,$A5
+	.db $A6,$A7,$A8,$A9,$AA,$AB,$AC,$AD,$69,$00,$A3,$A1,$A1,$45,$0D,$00
+	.db $92,$B0,$B1,$B2,$B3,$B4,$B5,$B6,$B7,$B8,$B9,$BA,$BB,$BC,$BD,$BE
+	.db $BF,$6D,$6E,$0E,$00,$92,$C0,$C1,$C2,$C3,$C4,$C5,$C6,$C7,$C8,$C9
+	.db $CA,$CB,$CC,$CD,$CE,$CF,$6F,$72,$0E,$00,$92,$D0,$D1,$D2,$D3,$D4
+	.db $D5,$D6,$D7,$D8,$D9,$DA,$DB,$DC,$DD,$DE,$DF,$6B,$6C,$0E,$00,$95
+	.db $E0,$E1,$E2,$E3,$E4,$E5,$E6,$E7,$E8,$E9,$EA,$EB,$EC,$ED,$EE,$EF
+	.db $9F,$F0,$00,$74,$75,$0C,$00,$90,$F1,$F2,$F3,$F4,$F5,$F6,$F7,$F8
+	.db $F9,$FA,$FB,$FC,$FD,$FE,$FF,$73,$51,$00,$8D,$32,$00,$0B,$0F,$0E
+	.db $01,$0D,$09,$00,$1C,$24,$24,$1C,$51,$00,$8C,$27,$00,$07,$01,$0D
+	.db $05,$00,$13,$14,$01,$12,$14,$36,$00,$8B,$10,$01,$13,$13,$00,$17
+	.db $0F,$12,$04,$00,$00,$05,$2D,$7D,$00,$55,$00,$85,$0A,$0A,$0A,$00
+	.db $00,$0E,$55,$82,$15,$05,$20,$00
+	.db $FF
+.else ;VER_USA
 Nametable02Data:
 	.dw $2000
 	.db $7E,$00,$0D,$00,$8B,$2C,$2D,$2E,$2F,$30,$31,$32,$33,$34,$44,$35
@@ -38,6 +62,8 @@ Nametable02Data:
 	.db $09,$0E,$14,$05,$0E,$04,$0F,$21,$00,$70,$00,$85,$0A,$0A,$0A,$00
 	.db $00,$0E,$55,$82,$15,$05,$20,$00
 	.db $FF
+.endif
+
 Nametable04Data:
 	.dw $2000
 	.db $17,$00,$81,$BA,$06,$00,$8A,$BB,$00,$00,$BF,$B9,$BC,$B7,$BF,$00
@@ -85,6 +111,28 @@ Nametable04Data:
 	.db $73,$03,$55,$85,$1D,$FF,$FF,$FF,$44,$03,$55,$88,$00,$3C,$30,$07
 	.db $C5,$45,$55,$15,$09,$00
 	.db $FF
+
+.if VER_JPN != 0
+Nametable06Data:
+	.dw $2000
+	.db $64,$00,$40,$00,$98,$32,$1C,$24,$24,$1C,$00,$03,$0F,$0E,$14,$09
+	.db $0E,$15,$09,$14,$19,$00,$07,$12,$01,$10,$08,$09,$03,$27,$00,$9A
+	.db $01,$13,$13,$0F,$03,$09,$01,$14,$05,$13,$2E,$09,$0E,$03,$39,$0C
+	.db $09,$03,$05,$0E,$13,$05,$04,$00,$02,$19,$2C,$00,$8E,$01,$02,$12
+	.db $01,$0D,$13,$30,$07,$05,$0E,$14,$09,$0C,$05,$30,$00,$92,$05,$0E
+	.db $14,$05,$12,$14,$01,$09,$0E,$0D,$05,$0E,$14,$2E,$09,$0E,$03,$39
+	.db $30,$00,$8F,$01,$0E,$04,$00,$08,$01,$13,$02,$12,$0F,$2E,$09,$0E
+	.db $03,$39,$2F,$00,$94,$01,$0C,$0C,$00,$12,$09,$07,$08,$14,$13,$00
+	.db $12,$05,$13,$05,$12,$16,$05,$04,$39,$6A,$00,$96,$14,$09,$14,$0C
+	.db $05,$00,$0D,$15,$13,$09,$03,$00,$06,$12,$0F,$0D,$00,$2B,$13,$17
+	.db $0D,$2C,$29,$00,$99,$17,$12,$09,$14,$14,$05,$0E,$00,$02,$19,$00
+	.db $04,$0F,$15,$07,$00,$0B,$01,$14,$13,$01,$12,$0F,$13,$39,$26,$00
+	.db $9A,$32,$1C,$24,$24,$1C,$00,$13,$14,$01,$12,$00,$17,$09,$0C,$04
+	.db $00,$0D,$15,$13,$09,$03,$2E,$09,$0E,$03,$39,$26,$00,$9A,$78,$02
+	.db $0D,$09,$79,$00,$01,$0C,$0C,$00,$12,$09,$07,$08,$14,$13,$00,$12
+	.db $05,$13,$05,$12,$16,$05,$04,$39,$64,$00,$5F,$00
+	.db $FF
+.else ;VER_USA
 Nametable06Data:
 	.dw $2000
 	.db $64,$00,$40,$00,$98,$32,$1C,$24,$24,$1D,$00,$03,$0F,$0E,$14,$09
@@ -104,6 +152,8 @@ Nametable06Data:
 	.db $0D,$09,$79,$00,$01,$0C,$0C,$00,$12,$09,$07,$08,$14,$13,$00,$12
 	.db $05,$13,$05,$12,$16,$05,$04,$39,$64,$00,$5F,$00
 	.db $FF
+.endif
+
 Nametable0AData:
 	.dw $2000
 	.db $7E,$00,$0A,$00,$10,$01,$10,$00,$81,$01,$0E,$00,$81,$01,$10,$00
@@ -328,11 +378,76 @@ Nametable08Data:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;COPY PROTECT CHECK ROUTINES;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+.if VER_JPN != 0
+CopyProtectCheck:
+	;Clear checksum
+	jsr CopyProtectCheckClear
+	;Calculate checksum over title screen text
+	ldy #$0D
+CopyProtectCheck_Loop:
+	;Add byte to checksum
+	lda Nametable02Data+$DC,y
+	jsr CopyProtectCheckAdd
+	bpl CopyProtectCheck_Loop
+CopyProtectCheck_Self:
+	;If checksum != $017E, set hard mode flag
+	lda $00
+	cmp #$7E
+	bne CopyProtectCheck_SetHard
+	lda $01
+	cmp #$01
+	bne CopyProtectCheck_SetHard
+	;Clear checksum
+	jsr CopyProtectCheckClear
+	;Calculate checksum over self
+	ldy #$0C
+CopyProtectCheck_Loop2:
+	;Add byte to checksum
+	lda CopyProtectCheck_Self,y
+	jsr CopyProtectCheckAdd
+	bpl CopyProtectCheck_Loop2
+	;If checksum != $055E, set hard mode flag
+	lda $00
+	cmp #$5E
+	bne CopyProtectCheck_SetHard
+	lda $01
+	cmp #$05
+	bne CopyProtectCheck_SetHard
+	;Clear hard mode flag
+	lda #$00
+CopyProtectCheck_SetF:
+	sta HardModeFlag
+	rts
+CopyProtectCheck_SetHard:
+	;Set hard mode flag
+	lda #$01
+	bne CopyProtectCheck_SetF
+
+CopyProtectCheckClear:
+	;Clear checksum
+	lda #$00
+	sta $00
+	sta $01
+	rts
+
+CopyProtectCheckAdd:
+	;Add byte to checksum
+	clc
+	adc $00
+	sta $00
+	lda #$00
+	adc $01
+	sta $01
+	;Loop for each byte
+	dey
+	rts
+.else ;VER_USA
 CopyProtectCheck:
 	;Clear hard mode flag
 	lda #$00
 	sta HardModeFlag
 	rts
+.endif
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;IRQ BUFFER SET DATA;
@@ -806,6 +921,34 @@ VRAMStrip00PointerTable:
 	.dw VRAMStrip71Data	;$71  "STAGE SELECT" text
 
 ;VRAM STRIPS
+.if VER_JPN != 0
+VRAMStrip00Data:
+	.dw $22A9
+	.db $07,$01,$0D,$05,$00,$13,$14,$01,$12,$14
+	.db $FF
+VRAMStrip08Data:
+	.dw $22A9
+	.db $00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+	.db $FF
+VRAMStrip28Data:
+	.dw $22A9
+	.db $00,$00,$13,$14,$01,$07,$05,$00
+	.db $FF
+VRAMStrip46Data:
+	.dw $22A7
+	.db $5D
+	.db $FE
+	.dw $22E7
+	.db $00
+	.db $FF
+VRAMStrip47Data:
+	.dw $22A7
+	.db $00
+	.db $FE
+	.dw $22E7
+	.db $5D
+	.db $FF
+.else ;VER_USA
 VRAMStrip00Data:
 	.dw $2249
 	.db $07,$01,$0D,$05,$00,$13,$14,$01,$12,$14
@@ -832,6 +975,8 @@ VRAMStrip47Data:
 	.dw $2287
 	.db $5D
 	.db $FF
+.endif
+
 VRAMStrip02Data:
 	.dw $2322
 	.db $1C,$10,$00,$1B,$1B,$1B,$1B,$1B,$1B,$00,$0C,$09,$06,$05,$00,$00
@@ -1763,6 +1908,47 @@ ClearStrip9FData:
 	.db $F0,$00,$10
 
 ;VRAM STRIPS
+.if VER_JPN != 0
+VRAMStrip98Data:
+	.dw $2722
+	.db $B5,$B6,$B7,$00,$84,$81,$97,$2D,$8B,$9C,$A2,$00,$60,$00,$46,$3A
+	.db $67,$75,$44,$3B,$4C,$75,$00,$EA,$00,$D6,$D7,$FE,$42,$27,$B8,$B9
+	.db $BA,$00,$74,$00,$67,$3B,$48,$5A,$7D,$56,$3A,$50,$60,$5F,$DC,$00
+	.db $C8,$3E,$7D,$50,$73,$DC
+	.db $FE
+	.dw $2762
+	.db $BB,$BC,$BD
+	.db $FE
+	.dw $27F0
+	.db $CC,$33
+	.db $FF
+VRAMStrip99Data:
+	.dw $2722
+	.db $BE,$BF,$C0,$00,$7E,$6F,$E0,$58,$3B,$00,$A7,$9F,$87,$2D,$DC,$00
+	.db $AB,$9F,$DA,$81,$82,$00,$61,$FE,$42,$27,$C1,$C2,$C3,$00,$46,$3A
+	.db $E5,$7C,$3B,$3E,$3A,$00,$5C,$00,$58,$6E,$73,$71,$56,$3A,$70,$00
+	.db $67,$50,$3A,$E8,$6D,$DC
+	.db $FE
+	.dw $2762
+	.db $C4,$C5,$C6
+	.db $FE
+	.dw $27F0
+	.db $CC,$33
+	.db $FF
+VRAMStrip9AData:
+	.dw $2722
+	.db $AC,$AD,$AE,$00,$6D,$3E,$7D,$50,$DC,$00,$67,$75,$5A,$00,$EE,$E5
+	.db $E8,$7D,$50,$6D,$3B,$E8,$5A,$DC,$FE,$42,$27,$AF,$B0,$B1,$00,$84
+	.db $81,$97,$2D,$8B,$9C,$A2,$69,$00,$44,$75,$EB,$44,$4E,$00,$EE,$52
+	.db $60,$69,$48,$56,$6B,$70,$25
+	.db $FE
+	.dw $2762
+	.db $B2,$B3,$B4
+	.db $FE
+	.dw $27F0
+	.db $CC,$33
+	.db $FF
+.else ;VER_USA
 VRAMStrip98Data:
 	.dw $2720
 	.db $00,$00,$B5,$B6,$B7,$00,$09,$2F,$16,$05,$00,$0C,$0F,$13,$14,$00
@@ -1801,6 +1987,8 @@ VRAMStrip9AData:
 	.dw $27F0
 	.db $CC,$33
 	.db $FF
+.endif
+
 VRAMStrip9CData:
 	.dw $27F0
 	.db $0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F
@@ -5608,10 +5796,15 @@ PasswordCharEncodeTable:
 	.db $19,$1A,$2A,$1D,$1E,$1F,$20,$21,$22,$23,$24,$25,$26,$27,$28,$29
 
 ;UNUSED SPACE
+;.if VER_JPN != 0
+	;$03 bytes of free space available
+	;.db $FF,$FF,$FF
+;.else ;VER_USA
 	;$34 bytes of free space available
 	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 	;.db $FF,$FF,$FF,$FF
+;.endif
 
 	.org $C000

@@ -2026,7 +2026,11 @@ PasswordCharGetVRAMAddr:
 	;Set VRAM buffer address
 	lda PasswordIndex
 	clc
+.if VER_JPN != 0
+	adc #$F4
+.else ;VER_USA
 	adc #$94
+.endif
 	sta VRAMBuffer,x
 	inx
 	lda #$22

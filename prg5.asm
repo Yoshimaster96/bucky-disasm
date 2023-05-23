@@ -5839,6 +5839,275 @@ Dialog0DData:
 Dialog0EData:
 	;(end dialog)
 	.db $FF
+
+.if VER_JPN != 0
+Dialog00Data:
+	;        BA  K   KI  -       O   HE  A       hi  ki  i   ru      BU  RI  N  KI   -   ,       \n
+	.db $00,$A7,$9F,$87,$2D,$00,$85,$95,$81,$00,$62,$3F,$3A,$70,$00,$A8,$A1,$99,$87,$2D,$2E,$00,$FC
+	;    DE  D   DO  A   I   ,     JE    NI  -   ,     WI    RI  -   no      5   ri  wa      \n
+	.db $AB,$9F,$DA,$81,$82,$2E,$8B,$DB,$90,$2D,$2E,$83,$9A,$A1,$2D,$60,$00,$20,$CB,$61,$00,$FC
+	;    A   NI  BA  -   SU  ni     hei  wa  o       to  ri  mo  do  su  ta  me  ni  \n
+	.db $81,$90,$A7,$2D,$8C,$5C,$00,$CD,$CE,$74,$00,$58,$6F,$6A,$EB,$4A,$50,$69,$5C,$FC
+	;    TO  -   DO  gu  n   da  n   to      hi  bi  ta  ta  ka  u   no  de  a   t   te  .   \n
+	.db $8F,$2D,$DA,$E2,$75,$E8,$75,$58,$00,$C9,$CA,$50,$50,$3E,$3B,$60,$EA,$7E,$7D,$50,$DC,$FC
+	;(clear text and go to next scene)
+	.db $FD
+	;       shi  ka shi      a  ru nitsu ,       I   N     DI    GU  NE  -    SHO    N   wa  \n
+	.db $00,$48,$3E,$48,$00,$7E,$70,$C9,$2E,$00,$82,$99,$AB,$9A,$D9,$91,$2D,$8B,$9E,$99,$61,$FC
+	;    TO  -   DO  gu  n   da  n   to      ko  u     ge    ki      ni  yo  t   te  \n
+	.db $8F,$2D,$DA,$E2,$75,$E8,$75,$60,$00,$44,$3B,$42,$7F,$3F,$00,$5C,$6D,$7D,$56,$FC
+	;    ha  ka  i   sa  re  ,
+	.db $61,$3E,$3A,$46,$71,$2E,$00
+	;(clear text)
+	.db $FE
+	;\n
+	.db $FC
+	;        5   ri  wa      to  ra  re  te shi  ma  t   te      .   .   .
+	.db $00,$20,$CB,$61,$00,$58,$6E,$73,$71,$56,$48,$66,$7D,$50,$39,$39,$39,$00
+	;(clear text and go to next scene)
+	.db $FD
+	;    BU  RI  N   KI  -   wa      GU  RI  -   N   PU  RA  NE  T   TO  ,   DE  D   DO  A   I   wa  \n
+	.db $A8,$A1,$99,$87,$2D,$61,$00,$D9,$A1,$2D,$99,$A6,$A0,$91,$9F,$8F,$2E,$AB,$9F,$DA,$81,$82,$61,$FC
+	;    RE  D   DO  PU  RA  NE  T   TO  ni      to  ji  ko  me  ra  re  ,
+	.db $A3,$9F,$DA,$A6,$A0,$91,$9F,$8F,$5C,$00,$58,$E5,$44,$69,$6E,$71,$2E,$00
+	;(clear text and go to next scene)
+	.db $FD
+	;      JE    NI  -   wa      BU  RU  -   PU  RA  NE  T   TO  ,     WI    RI  -   wa
+	.db $8B,$DB,$90,$2D,$61,$00,$A8,$A2,$2D,$A6,$A0,$91,$9F,$8F,$2E,$83,$9A,$A1,$2D,$61,$FC
+	;    I   E   RO  -   PU  RA  NE  T   TO  ni      to  ji  ko  me  ra  re  te shi  ma  t   ta  .   \n
+	.db $82,$84,$A4,$2D,$A6,$A0,$91,$9F,$8F,$5C,$00,$58,$E5,$44,$69,$6E,$71,$56,$48,$66,$7D,$50,$DC,$FC
+	;(clear text and go to next scene)
+	.db $FD
+	;    E   A   MA  -    SHA    RU      [     HA          HA          HA        !   !   \n
+	.db $84,$81,$97,$2D,$8B,$9C,$A2,$00,$76,$92,$9F,$00,$92,$9F,$00,$92,$9F,$00,$25,$25,$FC
+	;    4   ri  wa      a   zu  ka  t   ta  .       a   to  wa      BA  K   KI  -   \n
+	.db $1F,$CB,$61,$00,$7E,$E6,$3E,$7D,$50,$DC,$00,$7E,$58,$61,$00,$A7,$9F,$87,$2D,$FC
+	;    o   ma  e       da  ke  da  !   !   ]
+	.db $3D,$66,$3C,$00,$E8,$42,$E8,$25,$25,$77,$00
+	;(clear text and go to next scene)
+	.db $FD
+	;     inochi ka  ra  ga  ra      ni  ge  no  bi  ta      BA  K   KI  -   wa  \n
+	.db $00,$CC,$3E,$6E,$E0,$6E,$00,$5C,$E3,$60,$ED,$50,$00,$A7,$9F,$87,$2D,$61,$FC
+	;    4   ri  o        kyu    u    shu   tsu shi  ,   TO  -   DO  gu  n   da  n   o   \n
+	.db $1F,$CB,$74,$00,$3F,$7B,$3B,$48,$7B,$54,$48,$2E,$8F,$2D,$DA,$E2,$75,$E8,$75,$74,$FC
+	;    ka  i   me tsu  su  ru  ta  me  ni      gi  n   ga  no      da  i   bo  u   ke  n   ni  \n
+	.db $3E,$3A,$69,$54,$4A,$70,$50,$69,$5C,$00,$E1,$75,$E0,$60,$00,$E8,$3A,$F2,$3B,$42,$75,$5C,$FC
+	;    to tsu   nyu    u      shi  te  i   ku  no  de  a   t   te  .
+	.db $58,$54,$5C,$7B,$3B,$00,$48,$56,$3A,$40,$60,$EA,$7E,$7D,$50,$DC
+	;(end dialog)
+	.db $FF
+Dialog01Data:
+	;    a   ri  ga  to  u      tasu ka  t   ta  yo  .   \n
+	.db $7E,$6F,$E0,$58,$3B,$00,$C8,$3E,$7D,$50,$6D,$DC,$FC
+	;    ko  no  ba  ku  da  n   wa      ka  be  ya      ko  o   ri  o       ha  ka  i   de  ki  ru  \n
+	.db $44,$60,$EC,$40,$E8,$75,$61,$00,$3E,$EF,$6B,$00,$44,$3D,$6F,$74,$00,$61,$3E,$3A,$EA,$3F,$70,$FC
+	;    sa  i    kyo    u   no      bu  ki  na  n   da  .
+	.db $46,$3A,$3F,$7C,$3B,$60,$00,$EE,$3F,$5A,$75,$E8,$DC,$00
+	;(clear text)
+	.db $FE
+	;    se  na  ka  no      BA  K   KU  PA  K   KU  de     sora o   to  bu  ko  to  mo  \n
+	.db $4C,$5A,$3E,$60,$00,$A7,$9F,$88,$A5,$9F,$88,$EA,$00,$CF,$74,$58,$EE,$44,$58,$6A,$FC
+	;    de  ki  ru  n   da  .   ki  t   to      ya  ku  ni      ta tsu  yo  .
+	.db $EA,$3F,$70,$75,$E8,$DC,$3F,$7D,$58,$00,$6B,$40,$5C,$00,$50,$54,$6D,$DC
+	;(end dialog)
+	.db $FF
+Dialog02Data:
+	;    ma  t   te  ta  ze  !       o   so  ka  t   ta    ja    ne  -   ka  !   \n
+	.db $66,$7D,$56,$50,$E7,$25,$00,$3D,$4E,$3E,$7D,$50,$E5,$7A,$5F,$2D,$3E,$25,$FC
+	;    ko  re  ga      bu  ki  ko  ka  ra      to  t   te  ki  ta       SHU    T   TO  GA  N   da  .   \n
+	.db $44,$71,$E0,$00,$EE,$3F,$44,$3E,$6E,$00,$58,$7D,$56,$3F,$50,$00,$8B,$9E,$9F,$8F,$F3,$99,$E8,$DC,$FC
+	;(clear text)
+	.db $FE
+	;    o   re  wa      ka  be  o       yo  ji  no  bo  re  ru  ka  ra      ro  u   ya  no  \n
+	.db $3D,$71,$61,$00,$3E,$EF,$74,$00,$6D,$E5,$60,$F2,$71,$70,$3E,$6E,$00,$72,$3B,$6B,$60,$FC
+	;    to  na  ri  no      bu  ki  ko  ka  ra      mo  no  o   to  t   te  ku  ru  na  n   te      \n
+	.db $58,$5A,$6F,$60,$00,$EE,$3F,$44,$3E,$6E,$00,$6A,$60,$74,$58,$7D,$56,$40,$70,$5A,$75,$56,$00,$FC
+	;    ka  n   ta  n   da  t   ta  ze  !
+	.db $3E,$75,$50,$75,$E8,$7D,$50,$E7,$25
+	;(end dialog)
+	.db $FF
+Dialog03Data:
+	;    a   ri  ga  to  u      tasu ka  t   ta  yo  .   \n
+	.db $7E,$6F,$E0,$58,$3B,$00,$C8,$3E,$7D,$50,$73,$DC,$FC
+	;    e   n   go shi  te  ku  re  re  ba      yo  ta shi  no      BI  -   MU  to  \n
+	.db $3C,$75,$E4,$48,$56,$40,$71,$71,$EC,$00,$73,$50,$48,$60,$00,$DD,$2D,$98,$58,$FC
+	;    ma  ho  u    kyu    u   de      te  ki  o       i   s   so  u  shi  te  mi  se  ru  \n
+	.db $66,$65,$3B,$3F,$7B,$3B,$EA,$00,$56,$3F,$74,$00,$3A,$7D,$4E,$3B,$48,$56,$67,$4C,$70,$FC
+	;    ka  ra  ne  .
+	.db $3E,$6E,$5F,$DC
+	;(end dialog)
+	.db $FF
+Dialog04Data:
+	;    ho  n   to  u   ni     tasu ka  t   ta  yo  .   \n
+	.db $65,$75,$58,$3B,$5C,$00,$C8,$3E,$7D,$50,$6D,$DC,$FC
+	;    to  ji  ko  me  ra  re  te  i   ru  a   i   da  ni       kyo    u    ryo    ku  na  \n
+	.db $58,$E5,$44,$69,$6E,$71,$56,$3A,$70,$7E,$3A,$E8,$5C,$00,$3F,$7C,$3B,$6F,$7C,$40,$5A,$FC
+	;    bu  ki  o       ka  i   ha tsu shi  ta  n   da  .
+	.db $EE,$3F,$74,$00,$3E,$3A,$61,$54,$48,$50,$75,$E8,$DC,$00
+	;(clear text)
+	.db $FE
+	;    ha  ka  i    ryo    ku  ga       kyo    u   re tsu  de     tsu  yo  i       te  ki  mo  \n
+	.db $61,$3E,$3A,$6F,$7C,$40,$E0,$00,$3F,$7C,$3B,$71,$54,$EA,$00,$54,$6D,$3A,$00,$56,$3F,$6A,$FC
+	;    i  chi  ge  ki  da  yo  !   \n
+	.db $3A,$52,$E3,$3F,$E8,$6D,$25,$FC
+	;    hi  ki  ga  ne  o       na  ga  i       a   i   da      hi  i   te  i   ru  to  \n
+	.db $D0,$3F,$E0,$5F,$74,$00,$5A,$E0,$3A,$00,$7E,$3A,$E8,$00,$D0,$3A,$56,$3A,$70,$58,$FC
+	;    sa  ra  ni      wa  ka  i    ryo    ku  ga      A   P   PU  su  ru  yo  .
+	.db $46,$6E,$5C,$00,$61,$3E,$3A,$6F,$7C,$40,$E0,$00,$81,$9F,$A6,$4A,$70,$6D,$DC
+	;(end dialog)
+	.db $FF
+Dialog05Data:
+	;    \n
+	.db $FC
+	;    \n
+	.db $FC
+	;        ko  u  shi  te      4   ri  o        kyu    u    shu   tsu shi  ta      BA  K   KI  -   \n
+	.db $00,$44,$3B,$48,$56,$00,$1F,$CB,$74,$00,$3F,$7B,$3B,$48,$7B,$54,$48,$50,$00,$A7,$9F,$87,$2D,$FC
+	;    de  a   t   ta  ga  .   .   .
+	.db $EA,$7E,$7D,$50,$E0,$39,$39,$39
+	;(clear text and go to next scene)
+	.db $FD
+	;    \n
+	.db $FC
+	;    \n
+	.db $FC
+	;    ji tsu  ha      so  re  wa      BA  K   KI  -       O   HE  A   o       to  ra  e   ru  \n
+	.db $E5,$54,$61,$00,$4E,$71,$61,$00,$A7,$9F,$87,$2D,$00,$85,$95,$81,$74,$00,$58,$6E,$3C,$70,$FC
+	;    ta  me  ni      TO  -   DO  gu  n   ga     shi  ku  n   da      wa  na  da  t   ta  \n
+	.db $50,$69,$5C,$00,$8F,$2D,$DA,$E2,$75,$E0,$00,$48,$40,$75,$E8,$00,$73,$5A,$E8,$7D,$50,$FC
+	;    no  da  !   !
+	.db $60,$E8,$25,$25,$00
+	;(clear text and go to next scene)
+	.db $FD
+	;    BA  K   KI  -       [   da  i     jo    u   bu  ka      ?   ]   \n
+	.db $A7,$9F,$87,$2D,$00,$76,$E8,$3A,$E5,$7C,$3B,$EE,$3E,$00,$26,$77,$FC
+	;    BU  RI  N   KI  -   [   u   n   .       ko  ko  wa      MA  GU  MA  TE  N   KA  -   no      \n
+	.db $A8,$A1,$99,$87,$2D,$76,$3B,$75,$DC,$00,$44,$44,$61,$00,$97,$D9,$97,$8D,$99,$86,$2D,$60,$00,$FC
+	;                           nai  bu  da  ne  .   ]   \n
+	.db $00,$00,$00,$00,$00,$00,$D1,$D2,$E8,$5F,$DC,$77,$FC
+	;(clear text)
+	.db $FE
+	;    BA  K   KI  -       [   se  k   ka  ku      5   ri      so  ro  t   ta  no  ni  na  .   ]   \n
+	.db $A7,$9F,$87,$2D,$00,$76,$4C,$7D,$3E,$40,$00,$20,$CB,$00,$4E,$72,$7D,$50,$60,$5C,$5A,$DC,$77,$FC
+	;    BU  RI  N   KI  -   [   to  ni  ka  ku      ta  no      3   ri  o       sa  ga  sa  \n
+	.db $A8,$A1,$99,$87,$2D,$76,$58,$5C,$3E,$40,$00,$D8,$60,$00,$1E,$CB,$74,$00,$46,$E0,$46,$FC
+	;                            na  i   to  .   ]   \n
+	.db $00,$00,$00,$00,$00,$00,$5A,$3A,$58,$DC,$77,$FC
+	;(clear text and go to next scene)
+	.db $FD
+	;    \n
+	.db $FC
+	;    \n
+	.db $FC
+	;    \n
+	.db $FC
+	;    \n
+	.db $FC
+	;(end dialog)
+	.db $FF
+Dialog06Data:
+	;      JE    NI  -       [    KYA    PU  TE  N       ko  re  ka  ra      do  u   su  ru  no  .   ]   \n
+	.db $8B,$DB,$90,$2D,$00,$76,$87,$9C,$A6,$8E,$99,$00,$44,$71,$3E,$6E,$00,$EB,$3B,$4A,$70,$60,$DC,$77,$FC
+	;    BA  K   KI  -       [   so  u   da  na  .       na  n   to  ka shi  te      da  s    shu   tsu  \n
+	.db $A7,$9F,$87,$2D,$00,$76,$4E,$3B,$E8,$5A,$DC,$00,$5A,$75,$58,$3E,$48,$56,$00,$E8,$7D,$48,$7B,$54,$FC
+	;                       shi  na   kya    .   ]   \n
+	.db $00,$00,$00,$00,$00,$48,$5A,$3F,$7A,$DC,$77,$FC
+	;      WI    RI  -       [   i   ma      wa  re  wa  re  wa      do  ko  ni      i   ru  n   da  \n
+	.db $83,$9A,$A1,$2D,$00,$76,$3A,$66,$00,$73,$71,$73,$71,$61,$00,$EB,$44,$5C,$00,$3A,$70,$75,$E8,$FC
+	;                        ro  u       ?   ]
+	.db $00,$00,$00,$00,$00,$72,$3B,$00,$26,$77,$00
+	;(clear text)
+	.db $FE
+	;    BU  RI  N   KI  -   [   MA  GU  MA  TE  N   KA  -       sa  i     jo    u   bu  \n
+	.db $A8,$A1,$99,$87,$2D,$76,$97,$D9,$97,$8D,$99,$86,$2D,$00,$46,$3A,$E5,$7C,$3B,$EE,$FC
+	;                        a   ta  ri  ka  to  .   .   .   ]   \n
+	.db $00,$00,$00,$00,$00,$7E,$50,$6F,$3E,$58,$39,$39,$39,$77,$FC
+	;    BA  K   KI  -       [   yo shi  !       ko  no  ma  ma      DA  SU  TO   SHU    -   TO  o   \n
+	.db $A7,$9F,$87,$2D,$00,$76,$6D,$48,$25,$00,$44,$60,$66,$66,$00,$A9,$8C,$8F,$8B,$9D,$2D,$8F,$74,$FC
+	;                        to  o   t   te      TE  N   KA  -   no chuushin bu  o       ba  ku  wa  \n
+	.db $00,$00,$00,$00,$00,$58,$3D,$7D,$56,$00,$8D,$99,$86,$2D,$60,$F8,$F9,$D2,$74,$00,$EC,$40,$61,$FC
+	;                       shi  yo  u       !   !   ]
+	.db $00,$00,$00,$00,$00,$48,$6D,$3B,$00,$25,$25,$77,$00
+	;(clear text)
+	.db $FE
+	;    DE  D   DO  A   I       [    HYA    H   HO  -   !   !       o   mo shi  ro  ku  na  t   te  \n
+	.db $AB,$9F,$DA,$81,$82,$00,$76,$93,$9C,$9F,$96,$2D,$25,$25,$00,$3D,$6A,$48,$72,$40,$5A,$7D,$56,$FC
+	;                            ki  ya  ga  t   ta  ze  !   !   !   ]
+	.db $00,$00,$00,$00,$00,$00,$3F,$6B,$E0,$7D,$50,$E7,$25,$25,$25,$77,$00
+	;(clear text and go to next scene)
+	.db $FD
+	;(end dialog)
+	.db $FF
+Dialog07Data:
+	;      JE    NI  -       [   yo  u   ya  ku      DA  SU  TO   SHU    -   TO  ka  ra  \n
+	.db $8B,$DB,$90,$2D,$00,$76,$6D,$3B,$6B,$40,$00,$A9,$8C,$8F,$8B,$9D,$2D,$8F,$3E,$6E,$FC
+	;                        ne  ke  da shi  ta  wa  .   ]   \n
+	.db $00,$00,$00,$00,$00,$5E,$42,$E8,$48,$50,$73,$DC,$77,$FC
+	;    BA  K   KI  -       [  haya ku     chuushin bu  o       ha  ka  i  shi  te      MA  GU  MA  \n
+	.db $A7,$9F,$87,$2D,$00,$76,$D3,$40,$00,$F8,$F9,$D2,$74,$00,$61,$3E,$3A,$48,$56,$00,$97,$D9,$97,$FC
+	;                        TE  N   KA  -   o       ba  ku  wa shi  na  ke  re  ba  .   ]   \n
+	.db $00,$00,$00,$00,$00,$8D,$99,$86,$2D,$74,$00,$EC,$40,$61,$48,$5A,$42,$71,$EC,$DC,$77,$FC
+	;(clear text)
+	.db $FE
+	;    \n
+	.db $FC
+	;    BA  K   KI  -       [   sa  a       i   ko  u       !   !   ]
+	.db $A7,$9F,$87,$2D,$00,$76,$46,$7E,$00,$3A,$44,$3B,$00,$25,$25,$77,$00
+	;(clear text and go to next scene)
+	.db $FD
+	;(end dialog)
+	.db $FF
+Dialog08Data:
+	;    BA  K   KI  -    [  KO  A   o       ha  ka  i   sa  re  ta      TE  N   KA  -   wa  \n
+	.db $A7,$9F,$87,$2D,$76,$89,$81,$74,$00,$61,$3E,$3A,$46,$71,$50,$00,$8D,$99,$86,$2D,$61,$FC
+	;                    ma  mo  na  ku      ba  ku  wa tsu  su  ru  .       i   so  i   de  \n
+	.db $00,$00,$00,$00,$66,$6A,$5A,$40,$00,$EC,$40,$61,$54,$4A,$70,$DC,$00,$3A,$4E,$3A,$EA,$FC
+	;                    da  s    shu   tsu shi  na  ke  re  ba  na  ra  na  i   .   \n
+	.db $00,$00,$00,$00,$E8,$7D,$48,$7B,$54,$48,$5A,$42,$71,$EC,$5A,$6E,$5A,$3A,$DC,$FC
+	;                    mi  n   na      o   ku  re  ru  na      !   !   ]   \n
+	.db $00,$00,$00,$00,$67,$75,$5A,$00,$3D,$40,$71,$70,$5A,$00,$25,$25,$77,$FC
+	;                    [   I   E   S   SA  -   !   ]
+	.db $00,$00,$00,$00,$76,$82,$84,$9F,$8A,$2D,$25,$77,$00
+	;(clear text and go to next scene)
+	.db $FD
+	;(end dialog)
+	.db $FF
+Dialog09Data:
+	;        ko  u  shi  te      BA  K   KI  -   O   HE  A   to      so  no naka ma  wa  \n
+	.db $00,$44,$3B,$48,$56,$00,$A7,$9F,$87,$2D,$85,$95,$81,$58,$00,$4E,$60,$D4,$D5,$61,$FC
+	;    TO  -   DO  MA  GU  MA  TE  N   KA  -   o       ha  ka  i  shi  ta  .       so shi  te  .   \n
+	.db $8F,$2D,$DA,$97,$D9,$97,$8D,$99,$86,$2D,$74,$00,$61,$3E,$3A,$48,$50,$DC,$00,$4E,$48,$56,$2E,$FC
+	;(clear text and go to next scene)
+	.db $FD
+	;            I   N     DI    GU  NE  -    SHO    N   o       to  ri  mo  do shi  te  \n
+	.db $00,$00,$82,$99,$AB,$9A,$D9,$91,$2D,$8B,$9E,$99,$74,$00,$58,$6F,$6A,$EB,$48,$56,$FC
+	;            da  s    shu   tsu shi  ta  .   \n
+	.db $00,$00,$E8,$7D,$48,$7B,$54,$48,$50,$DC,$FC
+	;(clear text and go to next scene)
+	.db $FD
+	;        BA  K   KI  -   ta chi  no      ta  ta  ka  i   wa      i  tsu  ma  de  \n
+	.db $00,$A7,$9F,$87,$2D,$50,$52,$60,$00,$50,$50,$3E,$3A,$61,$00,$3A,$54,$66,$EA,$FC
+	;   tsu  du  ku  no  ka  .       so  re  wa      ka  re  ra  ni  mo      wa  ka  ra  na  i   .   \n
+	.db $54,$E9,$40,$60,$3E,$2E,$00,$4E,$71,$61,$00,$3E,$71,$6E,$5C,$6A,$00,$73,$3E,$6E,$5A,$3A,$DC,$FC
+	;(clear text and go to next scene)
+	.db $FD
+	;               shi  ka shi      A   NI  BA  -   SU  ni     hei  wa  ga      mo  do  ru  \n
+	.db $00,$00,$00,$48,$3E,$48,$00,$81,$90,$A7,$2D,$8C,$5C,$00,$CD,$CE,$E0,$00,$6A,$EB,$70,$FC
+	;            so  no  hi  ma  de      ka  re  ra  wa      ta  ta  ka  i  tsu  du  ke  ru  \n
+	.db $00,$00,$4E,$60,$C9,$66,$EA,$00,$3E,$71,$6E,$61,$00,$50,$50,$3E,$3A,$54,$E9,$42,$70,$FC
+	;            da  ro  u   .
+	.db $00,$00,$E8,$72,$3B,$DC
+	;(clear text and go to next scene)
+	.db $FD
+	;    \n
+	.db $FC
+	;    \n
+	.db $FC
+	;            F   I   G   H   T   !           B   U   C   K   Y       O   '   H   A   R   E
+	.db $00,$00,$06,$09,$07,$08,$14,$25,$00,$00,$02,$15,$03,$0B,$19,$00,$0F,$2F,$08,$01,$12,$05
+	;(end dialog)
+	.db $FF
+.else ;VER_USA
 Dialog00Data:
 	;    B   U   C   K   Y       O   '   H   A   R   E       A   N   D       H   I   S   \n
 	.db $02,$15,$03,$0B,$19,$00,$0F,$2F,$08,$01,$12,$05,$00,$01,$0E,$04,$00,$08,$09,$13,$FC
@@ -6201,6 +6470,8 @@ Dialog09Data:
 	.db $00,$00,$0C,$05,$14,$2F,$13,$00,$03,$12,$0F,$01,$0B,$00,$14,$0F,$01,$04,$13,$25,$25
 	;(end dialog)
 	.db $FF
+.endif
+
 Dialog0AData:
 	;(end dialog)
 	.db $FF
@@ -6262,6 +6533,19 @@ Scene12Data:
 Scene32Data:
 	.db $09,$13,$03,$00,$08,$5A,$4F,$2C,$04,$65,$81,$7B,$52,$00,$00,$ED
 	.db $0F
+
+.if VER_JPN != 0
+Scene20Data:
+	.db $18,$09,$13,$02,$00,$24,$58,$4E,$22,$03,$74,$04,$6F,$05,$56,$C2
+	.db $66,$49,$00,$00,$03,$40,$15,$16,$02,$3C,$10,$40,$40,$0B,$04,$FB
+	.db $0E,$01,$92,$00,$01,$02,$3C,$10,$40,$50,$0B,$13,$FB,$0E,$00,$92
+	.db $00,$00,$BF,$0C,$AC,$0A,$06,$78
+	.db $0F
+Scene22Data:
+	.db $09,$00,$0C,$34,$3A,$22,$04,$55,$C1,$85,$56,$00,$00,$03,$32,$0C
+	.db $DC,$0C,$F0,$0A,$06,$F4
+	.db $0F
+.else ;VER_USA
 Scene20Data:
 	.db $18,$13,$02,$00,$24,$58,$4E,$22,$03,$74,$04,$6F,$05,$56,$C2,$66
 	.db $49,$00,$00,$03,$40,$15,$16,$02,$3C,$10,$40,$40,$0B,$04,$FB,$0E
@@ -6271,12 +6555,22 @@ Scene20Data:
 Scene22Data:
 	.db $00,$0C,$34,$3A,$22,$04,$55,$C1,$85,$56,$00,$00,$03,$32,$06,$B4
 	.db $0F
+.endif
+
 Scene24Data:
 	.db $06,$B4
 	.db $0F
+
+.if VER_JPN != 0
+Scene26Data:
+	.db $06,$78
+	.db $0F
+.else ;VER_USA
 Scene26Data:
 	.db $06,$F0
 	.db $0F
+.endif
+
 Scene28Data:
 	.db $06,$01
 	.db $0F
@@ -6962,8 +7256,60 @@ DemoInputCurData:
 	.db $00
 
 ;UNUSED SPACE
+;.if VER_JPN != 0
+	;$2F5 bytes of free space available
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+	;.db $FF,$FF,$FF,$FF,$FF
+;.else ;VER_USA
 	;$13 bytes of free space available
 	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 	;.db $FF,$FF,$FF
+;.endif
 
 	.org $C000

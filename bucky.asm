@@ -4,7 +4,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 VER_JPN = 0
-VER_USA = 0	;Default
+;VER_USA = 1	;Default
 
 ;;;;;;;;;;;;;
 ;INES HEADER;

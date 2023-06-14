@@ -3354,7 +3354,6 @@ WriteVRAMBuffer:
 	;If VRAM buffer empty, exit early
 	lda VRAMBuffer
 	beq WriteVRAMBuffer_Exit
-	;
 	ldy #$00
 WriteVRAMBuffer_SetAddr:
 	;Set VRAM strip direction

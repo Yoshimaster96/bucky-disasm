@@ -156,6 +156,7 @@ VictoryInit_Sub4:
 	sta Enemy_Temp4+$01
 ;$06: Level 7
 VictoryInit_Sub6:
+	;Do nothing
 	rts
 ;$05: Level 6
 VictoryInit_Sub5:
@@ -1032,9 +1033,9 @@ Enemy0C_Sub1:
 Enemy0C_Sub1_Loop:
 	ldy $11
 	;Spawn enemy
-	lda BeeSpawnDX,y
+	lda BeeSpawnXPos,y
 	sta $00
-	lda BeeSpawnDY,y
+	lda BeeSpawnYPos,y
 	sta $01
 	lda #$74
 	jsr FindFreeEnemySlot
@@ -1050,9 +1051,9 @@ Enemy0C_Sub1_End:
 	;Play sound
 	ldy #SE_BUZZ
 	jmp LoadSound
-BeeSpawnDX:
+BeeSpawnXPos:
 	.db $E8,$F4,$F8
-BeeSpawnDY:
+BeeSpawnYPos:
 	.db $04,$10,$1C
 
 ;$0D: Bee
@@ -5934,7 +5935,7 @@ RollingSpikeCheckCollision:
 	jsr GetCollisionType
 	;If no solid tile at bottom, exit early
 	beq Enemy3B_Exit
-	;Move enmy down $08
+	;Move enemy down $08
 	lda Enemy_X,x
 	clc
 	adc #$08

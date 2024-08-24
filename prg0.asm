@@ -3398,7 +3398,7 @@ HandlePlayerMovementX_Enemy:
 	bcc HandlePlayerMovementX_Kill
 	cmp #$F2
 	bcs HandlePlayerMovementX_Kill
-	;If on left or right side of screen before movement, check for warp
+	;If on left or right side of screen after movement, check for warp
 	adc $00
 	cmp #$0E
 	bcc HandlePlayerMovementX_CheckWarpLeft

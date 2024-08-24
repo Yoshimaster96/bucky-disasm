@@ -3177,7 +3177,7 @@ DelayIRQSection:
 	rts
 
 WriteIRQSection:
-	;Latch PPU address line
+	;Latch PPU status line
 	lda PPU_STATUS
 	;Set PPU address
 	lda IRQBufferAddrHi-1,x
@@ -8070,7 +8070,7 @@ Enemy7E_Sub1:
 	lda Enemy_X,x
 	cmp #$F0
 	bcc Enemy7E_Sub0_Exit
-	;Set enemy X velocity/animation and setup next task ($02: ???)
+	;Set enemy X velocity/animation and setup next task ($02: Left)
 	jsr Enemy7E_Init
 	;Set enemy props
 	lda #$01
@@ -9793,7 +9793,7 @@ NMI_WaitTasks:
 	jmp NMI_Exit
 
 SetScroll:
-	;Clear latch
+	;Latch PPU status line
 	lda PPU_STATUS
 	;Set scroll X
 	lda TempMirror_PPUSCROLL_X
@@ -10138,7 +10138,7 @@ InitMMC3:
 	sta CollBufferPointer+1
 	lda #$E2
 	sta PRNGDataPointer+1
-	;Load PRG bank $38 (clear hard mode subroutine bank)
+	;Load PRG bank $38 (do copy protection check subroutine bank)
 	ldy #$38
 	jsr LoadPRGBank
 	;Do copy protection check

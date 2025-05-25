@@ -790,7 +790,7 @@ Enemy0AJumpTable:
 	.dw Enemy0A_Sub3	;$03  Up
 	.dw Enemy0A_Sub4	;$04  In
 	.dw Enemy0A_Sub5	;$05  Wait
-;Sub 0: Init
+;$00: Init
 Enemy0A_Sub0:
 	;Check if on left or right side of screen
 	lda Enemy_X,x
@@ -815,7 +815,7 @@ Enemy0A_Sub0_SetX:
 	;Next task ($01: Out)
 	inc Enemy_Temp0,x
 	rts
-;Sub 1: Out
+;$01: Out
 Enemy0A_Sub1:
 	;Check if at end of animation
 	lda Enemy_X,x
@@ -844,7 +844,7 @@ Enemy0A_Sub1_Next:
 	inc Enemy_Temp0,x
 Enemy0A_Sub1_Exit:
 	rts
-;Sub 2: Down
+;$02: Down
 Enemy0A_Sub2:
 	;Decrement animation timer, check if 0
 	dec Enemy_Temp2,x
@@ -863,7 +863,7 @@ Enemy0A_Sub2:
 	;Next task ($03: Up)
 	inc Enemy_Temp0,x
 	rts
-;Sub 3: Up
+;$03: Up
 Enemy0A_Sub3:
 	;Decrement animation timer, check if 0
 	dec Enemy_Temp2,x
@@ -897,7 +897,7 @@ Enemy0A_Sub3_SetX:
 	;Next task ($04: In)
 	inc Enemy_Temp0,x
 	rts
-;Sub 4: In
+;$04: In
 Enemy0A_Sub4:
 	;Check if at end of animation
 	lda Enemy_X,x
@@ -919,7 +919,7 @@ Enemy0A_Sub4_Next:
 	;Next task ($05: Wait)
 	inc Enemy_Temp0,x
 	rts
-;Sub 5: Wait
+;$05: Wait
 Enemy0A_Sub5:
 	;Decrement animation timer, check if 0
 	dec Enemy_Temp2,x
@@ -1008,7 +1008,7 @@ Enemy0CJumpTable:
 	.dw Enemy0C_Sub0	;$00  Init
 	.dw Enemy0C_Sub1	;$01  Main
 	.dw Enemy0C_Sub2	;$02  Finish
-;Sub 0: Init
+;$00: Init
 Enemy0C_Sub0:
 	;Flip enemy X
 	lda Enemy_Props,x
@@ -1017,7 +1017,7 @@ Enemy0C_Sub0:
 	;Next task ($01: Main)
 	inc Enemy_Temp0,x
 	rts
-;Sub 1: Main
+;$01: Main
 Enemy0C_Sub1:
 	;If enemy Y position $40-$5F, spawn bees
 	lda Enemy_Y,x
@@ -1063,7 +1063,7 @@ Enemy0D:
 	beq Enemy0D_Main
 	;Decrement animation timer
 	dec Enemy_Temp2,x
-;Sub 2: Finish
+;$02: Finish
 Enemy0C_Sub2:
 	rts
 Enemy0D_Main:
@@ -1419,7 +1419,7 @@ Enemy15:
 Enemy15JumpTable:
 	.dw Enemy15_Sub0	;$00  Init
 	.dw Enemy15_Sub1	;$01  Main
-;Sub 0: Init
+;$00: Init
 Enemy15_Sub0:
 	;Next task ($01: Main)
 	inc Enemy_Temp0,x
@@ -1429,7 +1429,7 @@ Enemy15_Sub0:
 	lda #$40
 	sta Enemy_Props,x
 	bne Enemy15_Sub1_EntS0
-;Sub 1: Main
+;$01: Main
 Enemy15_Sub1:
 	;Check for swinging vine platform
 	lda Enemy_ID+$01,x

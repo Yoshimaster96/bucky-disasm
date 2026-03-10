@@ -320,7 +320,7 @@ UpdateSoundSub_NoFadeTri:
 	beq UpdateSoundSub_NoFT
 	;Increment tempo timer
 	inc SoundTempoTimer
-	;If tempo timer = tempo compare, don't update tempo
+	;If tempo timer == tempo compare, don't update tempo
 	cmp SoundTempoTimer
 	bne UpdateSoundSub_NoFT
 	;Reset tempo timer

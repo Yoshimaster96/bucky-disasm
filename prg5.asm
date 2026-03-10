@@ -5840,7 +5840,7 @@ Dialog0EData:
 	;(end dialog)
 	.db $FF
 
-.if VER_JPN != 0
+.ifdef VER_JPN
 Dialog00Data:
 	;        BA  K   KI  -       O   HE  A       hi  ki  i   ru      BU  RI  N  KI   -   ,       \n
 	.db $00,$A7,$9F,$87,$2D,$00,$85,$95,$81,$00,$62,$3F,$3A,$70,$00,$A8,$A1,$99,$87,$2D,$2E,$00,$FC
@@ -6534,7 +6534,7 @@ Scene32Data:
 	.db $09,$13,$03,$00,$08,$5A,$4F,$2C,$04,$65,$81,$7B,$52,$00,$00,$ED
 	.db $0F
 
-.if VER_JPN != 0
+.ifdef VER_JPN
 Scene20Data:
 	.db $18,$09,$13,$02,$00,$24,$58,$4E,$22,$03,$74,$04,$6F,$05,$56,$C2
 	.db $66,$49,$00,$00,$03,$40,$15,$16,$02,$3C,$10,$40,$40,$0B,$04,$FB
@@ -6561,7 +6561,7 @@ Scene24Data:
 	.db $06,$B4
 	.db $0F
 
-.if VER_JPN != 0
+.ifdef VER_JPN
 Scene26Data:
 	.db $06,$78
 	.db $0F
@@ -6652,8 +6652,8 @@ SceneColumnDataPointerTable:
 	.dw SceneColumn04Data	;$04 \Ship chasing
 	.dw SceneColumn05Data	;$05 |
 	.dw SceneColumn06Data	;$06 /
-	.dw SceneColumn07Data	;$07
-	.dw SceneColumn08Data	;$08
+	.dw SceneColumn07Data	;$07 \Ship capturing
+	.dw SceneColumn08Data	;$08 /
 
 SceneColumn01Data:
 	.db $28
@@ -7256,7 +7256,7 @@ DemoInputCurData:
 	.db $00
 
 ;UNUSED SPACE
-;.if VER_JPN != 0
+;.ifdef VER_JPN
 	;$2F5 bytes of free space available
 	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
 	;.db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF

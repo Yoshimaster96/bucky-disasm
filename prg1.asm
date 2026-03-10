@@ -350,7 +350,7 @@ RunGameSubmode_VictoryLifeUp:
 	lda Enemy_Temp2+$01
 	and #$03
 	bne RunGameSubmode_VictoryJingle_Exit
-	;If player HP = player max HP, setup next submode ($08: Life up end)
+	;If player HP == player max HP, setup next submode ($08: Life up end)
 	lda Enemy_HP
 	cmp Enemy_Temp4
 	beq RunGameSubmode_VictoryLifeUp_End
@@ -3657,7 +3657,7 @@ Enemy2E_Main:
 	;Check for screen edge collision
 	jmp Enemy2E_HitEdge
 Enemy2E_Change:
-	;Check if enemy Y position - $02 = player Y position (to account for height difference)
+	;Check if enemy Y position - $02 == player Y position (to account for height difference)
 	lda Enemy_Y,x
 	sec
 	sbc #$02
@@ -6993,7 +6993,7 @@ Enemy4B:
 	;Check for fly mode
 	dey
 	bne Enemy4B_Fly
-	;Shift enemy X velocity right 6 bits
+	;Multiply enemy X velocity by 1/64
 	lda Enemy_XVelLo,x
 	sta $00
 	lda Enemy_XVelHi,x
@@ -7003,7 +7003,7 @@ Enemy4B:
 	;Set enemy X acceleration
 	lda $00
 	sta Enemy_XAccel,x
-	;Shift enemy Y velocity right 6 bits
+	;Multiply enemy Y velocity by 1/64
 	lda Enemy_YVelLo,x
 	sta $00
 	lda Enemy_YVelHi,x
@@ -7057,7 +7057,7 @@ Enemy4B_NoFlash:
 	sec
 	sbc Enemy_X,x
 	sta Enemy_XVelHi,x
-	;Shift enemy X velocity right 3 bits
+	;Multiply enemy X velocity by 1/8
 	lda $08
 	bcs Enemy4B_PosX
 	eor #$FF
@@ -7078,7 +7078,7 @@ Enemy4B_PosX2:
 	sec
 	sbc Enemy_Y,x
 	sta Enemy_YVelHi,x
-	;Shift enemy Y velocity right 3 bits
+	;Multiply enemy Y velocity by 1/8
 	bcs Enemy4B_PosY
 	lda #$07
 	sec

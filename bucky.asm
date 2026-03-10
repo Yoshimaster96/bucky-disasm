@@ -1,10 +1,10 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;Bucky O'Hare (U) Disassembly;
-;      By Yoshimaster96      ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Bucky O'Hare Disassembly;
+;    By Yoshimaster96    ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-VER_JPN = 0
 ;VER_USA = 1	;Default
+;VER_JPN = 1
 
 ;;;;;;;;;;;;;
 ;INES HEADER;

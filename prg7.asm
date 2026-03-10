@@ -17,7 +17,7 @@ InitLevelScroll:
 	rts
 
 InitLevelScrollSub:
-	;Clear scroll X/Y velocity/acceleration
+	;Clear scroll velocity/acceleration
 	lda #$00
 	sta ScrollXAccel
 	sta ScrollYAccel
@@ -1514,7 +1514,7 @@ ScrollAnimXC_Sub3_Down:
 	;Move player down $01
 	inc Enemy_Y
 ScrollAnimXC_Sub3_NoY:
-	;If player X position X, don't move player X
+	;If player X position $10, don't move player X
 	lda Enemy_X
 	cmp #$10
 	beq ScrollAnimXC_Sub3_NoX
@@ -2714,7 +2714,7 @@ HexToDec_Loop:
 	sec
 	sbc #$0A
 	bcs HexToDec_Loop
-	;Add remainder (1's digit) to to digit tile '9'+1
+	;Add remainder (1's digit) to digit tile '9'+1
 	clc
 	adc #$25
 	sta $01
@@ -6028,7 +6028,7 @@ Enemy84_Sub1_NoShoot:
 	clc
 	adc #$01
 	sta Enemy_XVelHi,x
-	;Get collision type front
+	;Get collision type
 	asl
 	asl
 	asl
@@ -6247,16 +6247,16 @@ EnemyShootPlayerOffs_PosX:
 	eor #$FF
 EnemyShootPlayerOffs_PosY:
 	sta $0F
-	;Loop until |enemy X/Y velocity| <= $03
+	;Loop until enemy X/Y speed <= $03
 	lda #$03
 EnemyShootPlayerOffs_Loop:
-	;Shift enemy X/Y velocity right 1 bit
+	;Multiply enemy X/Y velocity by 1/2
 	lsr $0E
 	lsr $0F
-	;Check if |enemy X velocity| <= $03
+	;Check if enemy X speed <= $03
 	cmp $0E
 	bcc EnemyShootPlayerOffs_Loop
-	;Check if |enemy Y velocity| <= $03
+	;Check if enemy Y speed <= $03
 	cmp $0F
 	bcc EnemyShootPlayerOffs_Loop
 	;If enemy X/Y velocity both 0, set Y velocity $01
@@ -6318,7 +6318,7 @@ EnemyTargetX:
 	lda $00
 	sec
 	sbc $07
-	;Target X (shift 3 bits)
+	;Target X (multiply by 1/8)
 	ldy #$03
 	jsr EnemyTarget
 	;Set enemy X velocity
@@ -6339,7 +6339,7 @@ EnemyTargetY:
 	lda $00
 	sec
 	sbc $07
-	;Target Y (shift 4 bits)
+	;Target Y (multiply by 1/16)
 	ldy #$04
 	jsr EnemyTarget
 	;Set enemy Y velocity
@@ -6354,7 +6354,7 @@ EnemyFacePlayer:
 	;Check if player is to left or right
 	lda Enemy_X
 	cmp Enemy_X,x
-	;Flip enemy X according to player relative position X
+	;Flip enemy X based on player relative position X
 	ror
 	ror
 	and #$40
@@ -7230,7 +7230,7 @@ Enemy7A_Sub1:
 	;If moving left, don't shoot laser
 	lda Enemy_XVelHi+$02
 	bmi Enemy7A_Sub1_NoShoot
-	;If enemy X position = shoot X position, shoot laser
+	;If enemy X position == shoot X position, shoot laser
 	lda Enemy_X+$02
 	cmp Enemy_Temp2+$02
 	beq Enemy7A_Sub1_Shoot
@@ -8668,7 +8668,7 @@ Enemy77_Back:
 	lda #(EF_ACTIVE|EF_NOANIM|EF_HITBULLET|EF_HITENEMY|EF_VISIBLE)
 Enemy77_NoBottomLeft:
 	sta Enemy_Flags+$01
-	;Check if enemy HP = saved HP
+	;Check if enemy HP == saved HP
 	lda Enemy_HP+$01
 	cmp Enemy_Temp2+$01
 	beq Enemy77_NoSetHP
@@ -8752,7 +8752,7 @@ Enemy77_Spawn:
 	ldy #SE_WHIRLASER1
 	jmp LoadSound
 Enemy77_NoBack:
-	;If enemy HP = saved HP, don't flash palette
+	;If enemy HP == saved HP, don't flash palette
 	lda Enemy_HP,x
 	cmp Enemy_Temp2,x
 	beq Enemy77_ShooterNoFlash
@@ -8885,7 +8885,7 @@ EnemyShootPlayerOnce_Left:
 	lda #$FF
 EnemyShootPlayerOnce_SetX:
 	sta $03
-	;Shift enemy velocity left 2 bits
+	;Multiply enemy velocity by 4
 	asl $00
 	rol $01
 	asl $00
@@ -9186,10 +9186,10 @@ BGMinibossSnakeMoveEnemies_TB:
 	sta Enemy_X+$09
 	rts
 BGMinibossSnakeGetEnemyXOffs:
-	;Shift X distance right 1 bit
+	;Multiply X distance by 1/2
 	lsr
 	sta $08
-	;Shift X distance right 4 bits and multiply by 5
+	;Multiply X distance by 5/16
 	lsr
 	sta $00
 	lsr
@@ -9197,7 +9197,7 @@ BGMinibossSnakeGetEnemyXOffs:
 	clc
 	adc $00
 	sta $00
-	;Shift X distance right 5 bits and multiply by 5
+	;Multiply X distance by 5/32
 	lsr
 	sta $01
 BGMinibossSnakeGetEnemyXOffs_Exit:
@@ -10202,7 +10202,7 @@ DMCBassDrumDataEnd:
 	.org $FFE0
 	;    0123456789ABCDEF
 	.db "    BUCKY O'HARE"	;Title
-.if VER_JPN != 0
+.ifdef VER_JPN
 	.db $DE,$39	;PRG checksum
 .else ;VER_USA
 	.db $DA,$F3	;PRG checksum
@@ -10212,7 +10212,7 @@ DMCBassDrumDataEnd:
 	.db $04		;Horizontal mirroring, MMC
 	.db $01		;Title encoding (ASCII)
 	.db $0B		;Title length
-.if VER_JPN != 0
+.ifdef VER_JPN
 	.db $CA		;Maker code (Konami)
 	.db $90		;Header checksum
 .else ;VER_USA

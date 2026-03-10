@@ -2113,7 +2113,7 @@ HandlePlayerB_Charging2:
 	ldy #SE_CHARGING2
 	jsr LoadSound
 HandlePlayerB_NoCharging:
-	;If current power = max power, don't increment current power
+	;If current power == max power, don't increment current power
 	lda a:CharacterPowerMax,x
 	and #$7F
 	cmp a:CharacterPowerCur,x
@@ -2772,7 +2772,7 @@ HandlePlayerSpecialMoveY_Scroll:
 	iny
 	iny
 HandlePlayerSpecialMoveY_Scroll_UpNoWarp2:
-	;If current screen = top screen, setup scroll for top side of level
+	;If current screen == top screen, setup scroll for top side of level
 	lda (LevelAreaInfoPointer),y
 	cmp CurScreen
 	bne HandlePlayerSpecialMoveY_Scroll_UpExit
@@ -2827,7 +2827,7 @@ HandlePlayerSpecialMoveY_Scroll_Down:
 	iny
 	iny
 HandlePlayerSpecialMoveY_Scroll_DownNoWarp2:
-	;If current screen = bottom screen, setup scroll for bottom side of level
+	;If current screen == bottom screen, setup scroll for bottom side of level
 	lda (LevelAreaInfoPointer),y
 	sec
 	sbc #$01
@@ -3230,14 +3230,14 @@ GetCollisionTypeBottomSub_AnyY:
 	rts
 
 GetCollisionTypeTop:
-	;Get collision type top left/top right
+	;Get collision type top left/right
 	lda Enemy_Y,x
 	sec
 	sbc Enemy_CollHeight,x
 	jmp GetCollisionTypeBottomSub_AnyY
 
 GetCollisionTypeRight:
-	;Get collision type bottom right
+	;Get collision type right bottom
 	lda Enemy_X,x
 	clc
 	adc Enemy_CollWidth,x
@@ -3252,14 +3252,14 @@ GetCollisionTypeRight_NoExit:
 	sta $01
 	jsr GetCollisionType
 	sta $08
-	;Get collision type top right
+	;Get collision type right top
 	lda Enemy_Y,x
 	sec
 	sbc Enemy_CollHeight,x
 	clc
 	adc #$04
 	sta $01
-	;If collision check offset top $F0-$FF, don't check collision top right
+	;If collision check offset top $F0-$FF, don't check collision right top
 	cmp #$F0
 	bcc GetCollisionTypeRight_Top
 	lda #$00
@@ -3270,10 +3270,10 @@ GetCollisionTypeRight_NoTop:
 	;Combine results
 	ora $08
 	sta $08
-	;Get collision type middle right
+	;Get collision type right middle
 	lda Enemy_Y,x
 	sta $01
-	;If collision check offset middle $F0-$FF, don't check collision middle right
+	;If collision check offset middle $F0-$FF, don't check collision right middle
 	cmp #$F0
 	bcc GetCollisionTypeRight_Mid
 	lda #$00
@@ -3286,7 +3286,7 @@ GetCollisionTypeRight_NoMid:
 	rts
 
 GetCollisionTypeLeft:
-	;Get collision type bottom left/top left/middle left
+	;Get collision type left bottom/top/middle
 	lda Enemy_X,x
 	sec
 	sbc Enemy_CollWidth,x
@@ -3428,7 +3428,7 @@ HandlePlayerMovementX_CheckWarp:
 	lda CurLevel
 	cmp #$04
 	beq HandlePlayerMovementX_Level5
-	;If current screen = entrance 1 screen, check for warp backward
+	;If current screen == entrance 1 screen, check for warp backward
 	ldy CurArea
 	iny
 	lda (LevelAreaInfoPointer),y
@@ -3515,7 +3515,7 @@ HandlePlayerMovementX_Level5:
 	beq HandlePlayerMovementX_CheckExit
 	cmp #$2A
 	beq HandlePlayerMovementX_CheckExit
-	;If current screen = entrance 1 screen, check for warp backward
+	;If current screen == entrance 1 screen, check for warp backward
 	lda CurArea
 	tay
 	lsr
@@ -3686,7 +3686,7 @@ HandlePlayerRunning_NoSpecial:
 	lda Enemy_Temp2
 	and #$A0
 	bne HandlePlayerRunning_None
-	;Get player X velocity shifted left 2 bits
+	;Get player X velocity multiplied by 4
 	lda $13
 	sta $00
 	lda $14
@@ -3709,7 +3709,7 @@ HandlePlayerRunning_NoSpecial:
 	;Check for player X velocity right
 	lda $00
 	bpl HandlePlayerRunning_Left
-	;If player X velocity << 2 = $FD, clear player X acceleration
+	;If player X velocity << 2 == $FD, clear player X acceleration
 	cmp #$FD
 	bcc HandlePlayerRunning_ClearX
 	bcs HandlePlayerRunning_Left
@@ -3717,7 +3717,7 @@ HandlePlayerRunning_LeftNoGrab:
 	;Check for player X velocity right
 	lda $00
 	bpl HandlePlayerRunning_Left
-	;If player X velocity << 2 = $F9, clear player X acceleration
+	;If player X velocity << 2 == $F9, clear player X acceleration
 	cmp #$F9
 	bcc HandlePlayerRunning_ClearX
 HandlePlayerRunning_Left:
@@ -3738,7 +3738,7 @@ HandlePlayerRunning_RightCheck:
 	;Check for player X velocity left
 	lda $00
 	bmi HandlePlayerRunning_Right
-	;If player X velocity << 2 = $04, clear player X acceleration
+	;If player X velocity << 2 == $04, clear player X acceleration
 	cmp #$04
 	bcs HandlePlayerRunning_ClearX
 	bcc HandlePlayerRunning_Right
@@ -3746,7 +3746,7 @@ HandlePlayerRunning_RightNoGrab:
 	;Check for player X velocity left
 	lda $00
 	bmi HandlePlayerRunning_Right
-	;If player X velocity << 2 = $08, clear player X acceleration
+	;If player X velocity << 2 == $08, clear player X acceleration
 	cmp #$08
 	bcs HandlePlayerRunning_ClearX
 HandlePlayerRunning_Right:
@@ -3850,7 +3850,7 @@ HandlePlayerSpecialMoveX_NoBack:
 	clc
 	adc PlatformXVel
 	bpl HandlePlayerSpecialMoveX_Right
-	;If current screen = left screen, set scroll flags for left side of level
+	;If current screen == left screen, set scroll flags for left side of level
 	clc
 	adc TempMirror_PPUSCROLL_X
 	lda CurScreen
@@ -3861,7 +3861,7 @@ HandlePlayerSpecialMoveX_NoBack:
 	lda #$C0
 	bne HandlePlayerSpecialMoveX_SetX
 HandlePlayerSpecialMoveX_Right:
-	;If current screen = right screen, set scroll flags for right side of level
+	;If current screen == right screen, set scroll flags for right side of level
 	clc
 	adc TempMirror_PPUSCROLL_X
 	lda CurScreen
@@ -4952,7 +4952,7 @@ GetCollisionTypeFront:
 	lda Enemy_Props
 	and #$40
 	beq GetCollisionTypeFront_Right
-	;Get collision type bottom left
+	;Get collision type left bottom
 	lda Enemy_X
 	sec
 	sbc #$0C
@@ -4960,7 +4960,7 @@ GetCollisionTypeFront:
 	bcc GetCollisionTypeFront_Exit
 	bcs GetCollisionTypeFront_NoExit
 GetCollisionTypeFront_Right:
-	;Get collision type bottom right
+	;Get collision type right bottom
 	lda Enemy_X
 	clc
 	adc #$0C
@@ -4973,7 +4973,7 @@ GetCollisionTypeFront_NoExit:
 	sta $01
 	jsr GetCollisionType
 	sta $08
-	;Get collision type top left or top right
+	;Get collision type left or right top
 	lda Enemy_Y
 	sec
 	sbc #$09
@@ -5427,12 +5427,12 @@ ScrollAnimX1:
 	inc $00
 	inx
 	jsr ScrollAnimApplyXVel
-	;Shift scroll X position 1 bit
+	;Multiply scroll X position by 1/2
 	jsr ScrollAnimShiftX1
 	sta TempIRQBufferScrollHi+3
 	lda $01
 	sta TempIRQBufferScrollX+3
-	;Shift scroll X position 2 bits
+	;Multiply scroll X position by 1/4
 	jsr ScrollAnimShiftX2
 	sta TempIRQBufferScrollHi
 	lda $01
@@ -6482,12 +6482,12 @@ ScrollAnimX4:
 	;Set scroll position to master PPU scroll
 	ldx #$02
 	jsr ScrollAnimGetPPUXPos
-	;Shift scroll X position 1 bit
+	;Multiply scroll X position by 1/2
 	jsr ScrollAnimShiftX1
 	sta TempIRQBufferScrollHi+1
 	lda $01
 	sta TempIRQBufferScrollX+1
-	;Shift scroll X position 2 bits
+	;Multiply scroll X position by 1/4
 	jsr ScrollAnimShiftX2
 	sta TempIRQBufferScrollHi
 	lda $01
@@ -7244,7 +7244,7 @@ CHRBankAnim8X_Up_Sub1_Next:
 	;Play sound
 	ldy #SE_CRASH
 	jsr LoadSound
-	;If current screen = $32 or < $1B, clear collision for left exit
+	;If current screen == $32 or < $1B, clear collision for left exit
 	lda CurScreen
 	cmp #$32
 	beq CHRBankAnim8X_Up_Sub1_Left
@@ -7826,10 +7826,10 @@ CHRBankAnimDX:
 	bne CHRBankAnimBX_SetPalette
 CHRLevel7BossIncTimer:
 	;Increment animation timer
-	inc DialogCursorY
-	lda DialogCursorY
+	inc BGPalAnimTimer
+	lda BGPalAnimTimer
 	and #$07
-	sta DialogCursorY
+	sta BGPalAnimTimer
 	tay
 	rts
 CHRLevel7BossPaletteTable:
@@ -8067,7 +8067,7 @@ ClearSpikes:
 	sec
 	sbc TempMirror_PPUSCROLL_Y
 	sta $01
-	;Get collision type
+	;Get collision type middle
 	jsr GetCollisionType
 	;Check for semisolid collision type
 	cmp #$01

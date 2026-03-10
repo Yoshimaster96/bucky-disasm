@@ -16,7 +16,7 @@ Nametable00Data:
 	.db $40,$00
 	.db $FF
 
-.if VER_JPN != 0
+.ifdef VER_JPN
 Nametable02Data:
 	.dw $2000
 	.db $7E,$00,$0D,$00,$8B,$2C,$2D,$2E,$2F,$30,$31,$32,$33,$34,$44,$35
@@ -112,7 +112,7 @@ Nametable04Data:
 	.db $C5,$45,$55,$15,$09,$00
 	.db $FF
 
-.if VER_JPN != 0
+.ifdef VER_JPN
 Nametable06Data:
 	.dw $2000
 	.db $64,$00,$40,$00,$98,$32,$1C,$24,$24,$1C,$00,$03,$0F,$0E,$14,$09
@@ -378,7 +378,7 @@ Nametable08Data:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;COPY PROTECT CHECK ROUTINES;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-.if VER_JPN != 0
+.ifdef VER_JPN
 CopyProtectCheck:
 	;Clear checksum
 	jsr CopyProtectCheckClear
@@ -921,7 +921,7 @@ VRAMStrip00PointerTable:
 	.dw VRAMStrip71Data	;$71  "STAGE SELECT" text
 
 ;VRAM STRIPS
-.if VER_JPN != 0
+.ifdef VER_JPN
 VRAMStrip00Data:
 	.dw $22A9
 	.db $07,$01,$0D,$05,$00,$13,$14,$01,$12,$14
@@ -1908,7 +1908,7 @@ ClearStrip9FData:
 	.db $F0,$00,$10
 
 ;VRAM STRIPS
-.if VER_JPN != 0
+.ifdef VER_JPN
 VRAMStrip98Data:
 	.dw $2722
 	.db $B5,$B6,$B7,$00,$84,$81,$97,$2D,$8B,$9C,$A2,$00,$60,$00,$46,$3A
@@ -5796,7 +5796,7 @@ PasswordCharEncodeTable:
 	.db $19,$1A,$2A,$1D,$1E,$1F,$20,$21,$22,$23,$24,$25,$26,$27,$28,$29
 
 ;UNUSED SPACE
-;.if VER_JPN != 0
+;.ifdef VER_JPN
 	;$03 bytes of free space available
 	;.db $FF,$FF,$FF
 ;.else ;VER_USA
